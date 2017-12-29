@@ -9,7 +9,9 @@
   "author": "krokowski0x",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.17.1",
+    "chalk": "^2.3.0",
+    "inquirer": "^4.0.1",
+    "node-fetch": "^1.7.3",
     "yargs": "^10.0.3"
   }
 }
