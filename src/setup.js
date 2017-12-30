@@ -1,8 +1,6 @@
 const fs = require('fs');
 const fetch = require('node-fetch');
 const inquirer = require('inquirer');
-const chalk = require('chalk');
-const _ = require('lodash');
 const APItoken = '15eb11ca03254a04af057045bba814e4';
 
 const saveLocation = location => fs.writeFileSync('app-setup.json', JSON.stringify({location}));
@@ -38,7 +36,7 @@ const runSetup = () => {
       });
   })
   .then(response => response.json())
-  .then((response) => {
+  .then(response => {
     inquirer
       .prompt([
         {
@@ -53,10 +51,20 @@ const runSetup = () => {
         }
       ]).then((answers) => {
           if (answers.isLocationValid === 'Yes')
-            saveLocation(response.address.route);
+            saveLocation(`${response.address.route}, ${response.address.locality}, ${response.address.country}`);
           else if (answers.isLocationValid === 'No') {
             const stations =  getNearestStations(response.location.latitude, response.location.longitude)
-            .then(stations => console.log(stations));
+            .then(stations => {
+              inquirer
+                .prompt([
+                  {
+                    name: 'station',
+                    type: 'list',
+                    message: `Which station is near your location?`,
+                    choices: stations,
+                  }
+                ]).then(answers => saveLocation(answers.station));
+            });
           }
       })
     }).catch((err) => console.log(err));
