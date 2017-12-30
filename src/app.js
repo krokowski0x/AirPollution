@@ -1,8 +1,4 @@
 const fs = require('fs');
-const axios = require('axios');
-const inquirer = require('inquirer');
-const chalk = require('chalk');
-const _ = require('lodash');
 const setup = require('./setup');
 
 const setupExists = () => {
