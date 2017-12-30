@@ -15,7 +15,7 @@ const getNearestStations = (lat, lng) => {
     })
     .then(response => response.json())
     .then(response => response.map(station =>
-          `${station.address.route}, ${station.address.locality}, ${station.address.country}`
+          `${station.address.route}, ${station.address.locality}, ${station.address.country}, Station ID: ${station.id}`
         ))
     .catch(err => console.log(err))
 };
@@ -51,7 +51,7 @@ const runSetup = () => {
         }
       ]).then((answers) => {
           if (answers.isLocationValid === 'Yes')
-            saveLocation(`${response.address.route}, ${response.address.locality}, ${response.address.country}`);
+            saveLocation(`${response.address.route}, ${response.address.locality}, ${response.address.country}, Station ID: ${response.id}`);
           else if (answers.isLocationValid === 'No') {
             const stations =  getNearestStations(response.location.latitude, response.location.longitude)
             .then(stations => {
