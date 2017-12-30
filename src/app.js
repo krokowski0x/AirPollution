@@ -1,17 +1,5 @@
 const fs = require('fs');
 const setup = require('./setup');
+const pollution = require('./pollution');
 
-const setupExists = () => {
-  try {
-    const setupFile = fs.readFileSync('app-setup.json');
-    return JSON.parse(setupFile);
-  } catch (err) {
-    return false;
-  }
-};
-
-const checkPollution = () => {
-  console.log('Checking pollution...');
-};
-
-setupExists() ? checkPollution() : setup.runSetup();
+fs.existsSync('app-setup.json') ? pollution.checkPollution() : setup.runSetup();
