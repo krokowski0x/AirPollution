@@ -1,12 +1,13 @@
 {
-  "name": "node-weather",
+  "name": "Node Air Pollution App",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simple node.js app to check air pollution in your location.",
   "main": "src/app.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "node src/app.js"
   },
-  "author": "krokowski0x",
+  "author": "Rafał Krókowski",
   "license": "MIT",
   "dependencies": {
     "chalk": "^2.3.0",
