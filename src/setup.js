@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 const inquirer = require('inquirer');
 const APItoken = '15eb11ca03254a04af057045bba814e4';
 
-const saveLocation = location => fs.writeFileSync('app-setup.json', JSON.stringify({location}));
+const saveLocation = location => fs.writeFileSync('app-setup.json', JSON.stringify({ location }));
 const getNearestStations = (lat, lng) => {
   let radius = 0.5;
    return fetch(`https://airapi.airly.eu/v1/sensors/current?southwestLat=${lat-radius}&southwestLong=${lng-radius}&northeastLat=${lat+radius}&northeastLong=${lng+radius}`,
@@ -15,8 +15,8 @@ const getNearestStations = (lat, lng) => {
     })
     .then(response => response.json())
     .then(response => response.map(station =>
-          `${station.address.route}, ${station.address.locality}, ${station.address.country}, Station ID: ${station.id}`
-        ))
+      `${station.address.route}, ${station.address.locality}, ${station.address.country}, Station ID: ${station.id}`
+      ))
     .catch(err => console.log(err))
 };
 
@@ -73,5 +73,5 @@ const runSetup = () => {
 module.exports = {
   saveLocation,
   getNearestStations,
-  runSetup
+  runSetup,
 };

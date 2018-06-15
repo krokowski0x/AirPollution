@@ -26,7 +26,7 @@ const checkPollution = () => {
     {
       headers: {
         Accept: "application/json",
-        apikey: APItoken
+        apikey: APItoken,
       }
     })
     .then(response => response.json())

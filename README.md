@@ -1,12 +1,11 @@
 # Node Air Pollution App
 
-Simple node.js app to check air pollution in your location.
+Simple Node.js app to check air pollution in your location.
 
 ## Brief description
 
-App finds nearest pollution sensor near your location, and gives you basic info about how bad is the air quality in your area.
-It also lets you save your location for easier checks further in the future.
-This app was inspired by horribly bad air quality in winter 2017 in Wroclaw, Poland.
+App finds nearest pollution sensor near your location, and gives you basic info about how bad is the air quality in your area. It also lets you save your location for easier checks further in the future.
+This app was inspired by horribly bad air quality in Winter 2017 in Wroclaw, Poland.
 
 ### Prerequisites
 
@@ -32,7 +31,7 @@ Otherwise it should show you pollution info instantly. Give it a try!
 
 * [Node.js](https://nodejs.org/en/) - Needs no introduction
 * [chalk](https://github.com/chalk/chalk) - Terminal string styling done right
-* [Inquirer](https://github.com/SBoudrias/Inquirer.js/) - Great CLI building utility for Node.js
+* [Inquirer](https://github.com/SBoudrias/Inquirer.js/) - Great, Promise-based CLI building utility for Node.js
 * [Yargs](http://yargs.js.org/) - Pirate-themed CLI options parser
 * [Airly API](https://airly.eu/pl/api/) - Detailed air pollution API
 
