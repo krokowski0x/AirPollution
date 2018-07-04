@@ -1,7 +1,7 @@
 const fs = require('fs');
 const fetch = require('node-fetch');
 const chalk = require('chalk');
-const APItoken = '15eb11ca03254a04af057045bba814e4';
+const APItoken = require('./superSecretAPIKey');
 
 const setupFile = fs.readFileSync('app-setup.json');
 const displayResults = (results, location) => {
